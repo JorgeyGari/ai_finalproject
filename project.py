@@ -60,6 +60,7 @@ for i in range(0, ACTIONS):
     actions.append(i)
 
 # Obtaining the probability table for the transitions
+print("Reading and processing historical data...")
 history = open('Data.csv', 'r')  # Read the file with historical data
 Lines = history.readlines()  # Read the data line by line
 
@@ -130,8 +131,10 @@ for line in Lines:
     T[s][a][t] += 1 / TRIALS  # Equally likely events
 
 history.close()  # Close the file with historical data
+print("Done.")
 
 # Value iteration
+print("Performing value iteration...")
 value_iteration = [[0 for i in range(STATES)]]  # Every expected value starts at 0
 
 i = 0
@@ -147,6 +150,7 @@ while value_iteration[i] != value_iteration[i - 1]:  # Our criteria for determin
         iteration.append(bellman(s, actions, states, value_iteration[i]))
     value_iteration.append(iteration)
     i += 1
+print("Done.\n-----------------------------------")
 
 # Optimal policies
 op = {}  # Dictionary that will store the optimal policy for each state
