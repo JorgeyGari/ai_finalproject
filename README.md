@@ -1,2 +1,1 @@
-# ai_finalproject
-Final project assignment for Artificial Intelligence, UC3M
+Final project assignment for the course Artificial Intelligence, imparted by Universidad Carlos III de Madrid in Spring 2022.
